@@ -13,7 +13,7 @@ from backend.utils.helpers import load_image_from_bytes, resize_for_analysis, is
 from backend.utils.sample_data import ensure_sample_images, get_sample_metadata, SAMPLES_DIR
 
 app = FastAPI(
-    title="Parotta Layer Counter 🫓 API",
+    title="Parotta Layer Counter API",
     description="Advanced, highly unnecessary AI computer vision system for Kerala Parotta lamination quantification.",
     version="1.0.0"
 )

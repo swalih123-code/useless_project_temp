@@ -142,12 +142,14 @@ python -m venv .venv
 # source .venv/bin/activate
 
 # Install dependencies
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 
-# Run FastAPI backend
-uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload
+# Run FastAPI backend using either:
+uvicorn main:app --host 127.0.0.1 --port 8000 --reload
+# Or using the FastAPI CLI:
+fastapi dev main.py
 ```
-The backend will be live at `http://127.0.0.1:8000` (API Docs at `http://127.0.0.1:8000/docs`).
+The backend will be live at `http://127.0.0.1:8000` (API Docs at `http://127.0.0.1:8000/docs`). The compiled React frontend is also served directly at `http://127.0.0.1:8000`.
 
 #### 2. Frontend Setup
 ```bash
