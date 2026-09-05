@@ -165,3 +165,15 @@ async def analyze_parotta(file: UploadFile = File(...)):
             status_code=500,
             detail=f"Parotta processing anomaly: {str(e)}"
         )
+
+# SPA fallback handler for frontend routes
+@app.get("/{full_path:path}")
+def catch_all(full_path: str):
+    file_path = os.path.join(FRONTEND_DIST, full_path)
+    if os.path.exists(file_path) and os.path.isfile(file_path):
+        return FileResponse(file_path)
+    index_html = os.path.join(FRONTEND_DIST, "index.html")
+    if os.path.exists(index_html):
+        return FileResponse(index_html)
+    raise HTTPException(status_code=404, detail="Resource not found")
+
