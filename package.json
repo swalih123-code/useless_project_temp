@@ -1,0 +1,10 @@
+{
+  "name": "parotta-layer-counter-root",
+  "version": "1.0.0",
+  "description": "Parotta Layer Counter 🫓 - Root workspace scripts",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "python run_app.py"
+  }
+}
